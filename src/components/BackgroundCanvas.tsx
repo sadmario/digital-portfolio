@@ -138,6 +138,22 @@ export default function BackgroundCanvas() {
       ref={containerRef}
       className="fixed inset-0 w-full h-full -z-20 overflow-hidden bg-bg-main pointer-events-none select-none"
     >
+      {/* 0. High-Tech Digital Mind Coding Background Video */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-40 filter brightness-95 contrast-110"
+        >
+          <source src="/background-video.mp4" type="video/mp4" />
+        </video>
+        {/* Soft cyber overlay to ensure content readability */}
+        <div className="absolute inset-0 bg-[#060B16]/45" />
+      </div>
+
       {/* 1. Slow drifting background Grid Mesh */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
@@ -163,12 +179,12 @@ export default function BackgroundCanvas() {
 
       {/* 3. Deep background Aurora mesh gradient - Slow rotations */}
       <div
-        className="absolute top-[-20%] left-[-10%] w-[120%] h-[140%] opacity-[0.25] blur-[150px] animate-aurora"
+        className="absolute top-[-20%] left-[-10%] w-[120%] h-[140%] opacity-[0.22] blur-[150px] animate-aurora"
         style={{
           background: `
-            radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.6) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.5) 0%, transparent 50%),
-            radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.4) 0%, transparent 50%)
+            radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.5) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.35) 0%, transparent 50%)
           `,
           backgroundSize: "200% 200%",
           transform: `translateY(${scrollOffset * 0.5}px)`,
@@ -180,7 +196,7 @@ export default function BackgroundCanvas() {
 
       {/* 5. Radial darkening vignette */}
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-[#060B16]/40 to-[#060B16]"
+        className="absolute inset-0 bg-gradient-to-b from-transparent via-[#060B16]/25 to-[#060B16]/85"
       />
     </div>
   );
